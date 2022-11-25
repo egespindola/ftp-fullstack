@@ -7,7 +7,7 @@
     <div class="container">
       <div class="main-content">
           <div class="ipt-grp">
-            <div id="ipt-download">
+            <div id="ipt-download"  class="bdr-bt mb">
               <h3>🔥Download a file</h3>
               <label for="ipt-txt" title="a text...">Path: </label>
               <input type="text" name="ipt-txt"  v-model="path" />
@@ -17,17 +17,19 @@
               File: <strong>{{ fileNameDown}}</strong>
               <br><br>
             </div>
-            <div id="ipt-mkdir">
+            <div id="ipt-mkdir" class="bdr-bt mb">
               <h3>🔥Create a dir</h3>
               <label for="ipt-txt-mkdir" title="Directory Name">Dir Name: </label>
               <input type="text" name="ipt-dirName"  v-model="dirName"  placeholder="new directory name"/>
               <button type="button" title="Create a new dir in remote srv" @click="handleCreate">Create</button>
               <br>
-              Path: <strong>/mnt/hd02/ftp/ms_ftp/{{dirName}} </strong> <br>
-              <input type="file">
+              Path: <strong>/mnt/hd02/ftp/ms_ftp/{{dirName}} </strong> <br>              
               <br><br>
             </div>
-            <anexos-arquivos></anexos-arquivos>
+            <div id="ipt-upload" class="bdr-bt mb">
+              <h3>🔥Upload files</h3>
+              <anexos-arquivos></anexos-arquivos>
+            </div>
           </div>
 
 
@@ -252,8 +254,16 @@ export default {
   color: white;
 }
 
-#ipt-mkdir{
-  border-top: 1px solid #414141;
+.bdr-bt {
+  border-bottom: 1px solid #414141;
+}
+
+.mb {
+  margin-bottom: 8px;
+}
+
+#ipt-upload{
+  padding-bottom: 6px;
 }
 
 button {
